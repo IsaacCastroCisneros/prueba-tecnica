@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+Pasos de desarrollo
+-Se tiene el componente Card que obtiene los datos de la api
+-Se crea un componente llamado Noticia en donde entraran los props de cada noticia (notes)
+-Se crea un useState para controlar cuando el card este abierto o cerrado, en base a un booleano
+-Se crea un boton para alternar el estado
+-Si no esta abierto se le extrae 5 elemento del arreglo de "notes" 
+-Caso contrario se mantendra el arreglo tal cual es recibido de la api
+-Se itera los "notes" para ser renderizados con el componente Noticia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tecnologias
+-Se utilizo el entorno de desarrollo de vite
+-Se utilizo react query para la toma de datos de la API
+-Se uso SASS para las hojas CSS en formto SCSS
+-Se utilizo la libreria de FontAwesome para lo iconos
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Pasos para el levantameinto de la app
+-npm i
+-npm i vite
+-npm run dev
