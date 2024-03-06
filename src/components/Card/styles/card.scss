@@ -1,0 +1,35 @@
+
+.card
+{
+   width: 19rem;
+   max-width: 100%;
+   border: 1px solid #e6e9ed;
+   padding: 1.2rem 1.3rem;
+   border-radius: .3rem;
+   position: relative;
+   background-color: #fff;
+
+   &__title
+   {
+    text-align: left;
+    color: #363636;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+   }
+   &__underscore
+   {
+    display: block;
+    background-color: #59f748;
+    height: .2rem;
+    width: 2.9rem;
+    margin: 0 0 .8rem 0;
+   }
+   &__list
+   {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+   }
+}
