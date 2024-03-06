@@ -1,6 +1,12 @@
 .noticia
 {
-  display: block;
   text-align: left;
   font-weight: bold;
+  list-style: disc;
+  margin-left:1rem; 
+
+  &::marker
+  {
+     color: #ababab;
+  }
 }
