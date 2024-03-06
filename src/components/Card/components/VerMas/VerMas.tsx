@@ -16,7 +16,7 @@ export default function VerMas({toogleIsOpenHandle,isOpen}:props)
   return (
     <button className="ver-mas" onClick={toogleIsOpenHandle}>
       {!isOpen && <span className="gradient"></span>}
-      <span>ver mas</span>
+      <span>ver más</span>
       <FontAwesomeIcon icon={faChevronDown} transform={{ rotate }} />
     </button>
   );

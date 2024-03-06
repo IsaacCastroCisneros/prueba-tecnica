@@ -4,10 +4,12 @@ import "./styles/card.scss"
 import noticia from "./interface/noticia";
 import VerMas from "./components/VerMas/VerMas";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export default function Card() 
 {
-  const{data}=useQuery(["noticias"],request)
+  const{data,isFetching,isFetched}=useQuery(["noticias"],request)
   const[isOpen,setIsOpen]=useState<boolean>(false)
 
   async function request()
@@ -29,16 +31,19 @@ export default function Card()
 
   return (
     <div className="card">
-      <p className="card__title">ultimas noticias</p>
+      <p className="card__title">últimas noticias</p>
       <span className="card__underscore"></span>
-      {notes.length > 0 && (
-        <ul className="card__list">
-          {finalNotes.map((note) => (
-            <Noticia key={note.id} {...note} />
-          ))}
-        </ul>
+      {isFetched && (
+        <>
+          <ul className="card__list">
+            {finalNotes.map((note) => (
+              <Noticia key={note.id} {...note} />
+            ))}
+          </ul>
+          <VerMas isOpen={isOpen} toogleIsOpenHandle={toogleIsOpenHandle} />
+        </>
       )}
-      <VerMas isOpen={isOpen} toogleIsOpenHandle={toogleIsOpenHandle}/>
-    </div>  
+      {isFetching && <span className="card__loading"><FontAwesomeIcon icon={faSpinner} spin={true}/></span>}
+    </div>
   );
 }
